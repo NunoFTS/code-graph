@@ -4,25 +4,25 @@ from backend.src.graph.state import GraphState
 from backend.src.agents.generator import code_generator
 from backend.src.agents.validator import validator
 from backend.src.agents.orchestrator import route_after_validation
-
+from backend.src.agents.sandbox import sandbox_executor
 
 def build_graph():
     builder = StateGraph(GraphState)
 
-    # Nodes
-    builder.add_node("generator", code_generator)
+    builder.add_node("code_generator", code_generator)
+    builder.add_node("sandbox", sandbox_executor)
     builder.add_node("validator", validator)
 
-    # Flow
-    builder.set_entry_point("generator")
+    builder.set_entry_point("code_generator")
 
-    builder.add_edge("generator", "validator")
+    builder.add_edge("code_generator", "sandbox")
+    builder.add_edge("sandbox", "validator")
 
     builder.add_conditional_edges(
         "validator",
         route_after_validation,
         {
-            "generator": "generator",
+            "code_generator": "code_generator",
             "end": END
         }
     )

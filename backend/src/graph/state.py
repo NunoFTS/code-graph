@@ -8,3 +8,5 @@ class GraphState(TypedDict, total=False):
     is_valid: bool
     attempts: int
     max_attempts: int
+
+    execution_result: dict
