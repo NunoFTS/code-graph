@@ -1,8 +1,10 @@
 from pathlib import Path
+from functools import lru_cache
 
 PROMPT_DIR = Path(__file__).resolve().parent.parent / "prompts"
 
 
+@lru_cache(maxsize=64)
 def load_prompt(filename: str) -> str:
     path = PROMPT_DIR / filename
 

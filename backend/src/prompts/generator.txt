@@ -11,3 +11,4 @@ Rules:
 - Avoid interactive input unless explicitly requested.
 
 User request:
+{input}

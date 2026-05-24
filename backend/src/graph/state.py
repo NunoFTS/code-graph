@@ -10,3 +10,4 @@ class GraphState(TypedDict, total=False):
     max_attempts: int
 
     execution_result: dict
+    error: str

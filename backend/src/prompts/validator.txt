@@ -11,7 +11,7 @@ Rules:
 - Check correctness of behavior, not just syntax.
 - Use execution output to verify correctness.
 - Assume code runs in a sandbox environment.
-- No comments in the code
+- No comments in the code.
 
 Output format MUST be one of the following:
 
@@ -22,9 +22,9 @@ OR
 FAIL: <clear reason>
 
 Guidelines:
-- If output matches the expected behavior → PASS
-- If runtime errors exist → FAIL
-- If logic is incorrect → FAIL
+- If output matches the expected behavior -> PASS
+- If runtime errors exist -> FAIL
+- If logic is incorrect -> FAIL
 
 Inputs:
 
@@ -35,3 +35,4 @@ Execution result:
 {execution_result}
 
 Generated code:
+{generated_code}
