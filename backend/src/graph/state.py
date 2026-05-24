@@ -6,3 +6,5 @@ class GraphState(TypedDict, total=False):
     generated_code: str
     validation_result: str
     is_valid: bool
+    attempts: int
+    max_attempts: int
